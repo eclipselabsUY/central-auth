@@ -1,0 +1,16 @@
+services:
+  egos-auth:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: egos-auth
+    working_dir: /app
+    volumes:
+      - ./:/app
+      - ./pyproject.toml:/app/pyproject.toml
+    ports:
+      - "8000:8000"
+    environment:
+      PYTHONUNBUFFERED: 1
+      PYTHONDONTWRITEBYTECODE: 1
+    restart: unless-stopped
