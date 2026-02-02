@@ -13,4 +13,4 @@ services:
     environment:
       PYTHONUNBUFFERED: 1
       PYTHONDONTWRITEBYTECODE: 1
-    restart: unless-stopped
+    restart: "no"
