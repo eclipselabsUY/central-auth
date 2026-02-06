@@ -1,0 +1,25 @@
+{
+    "vsicons.associations.folders": [
+        {
+            "icon": "config",
+            "extensions": [
+                "core"
+            ],
+            "format": "svg"
+        },
+        {
+            "icon": "db",
+            "extensions": [
+                "crud"
+            ],
+            "format": "svg"
+        },
+        {
+            "icon": "certificate",
+            "extensions": [
+                "auth"
+            ],
+            "format": "svg"
+        },
+    ]
+}
