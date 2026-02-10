@@ -4,3 +4,4 @@ uv.lock
 .env
 *.pyc
 egos.db
+warden.toml
