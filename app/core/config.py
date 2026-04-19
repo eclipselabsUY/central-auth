@@ -16,7 +16,7 @@ POSTGRES_DB = os.getenv("POSTGRES_DB")
 ENVIRONMENT = os.getenv("ENVIRONMENT")
 
 if ENVIRONMENT == "DEV":
-    DATABASE_URL = "sqlite+aiosqlite:///./egos.db"
+    DATABASE_URL = "sqlite+aiosqlite:///./eclipse-labs.db"
 else:
     DATABASE_URL = (
         f"postgresql+asyncpg://"

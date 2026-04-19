@@ -1,9 +1,9 @@
 services:
-  egos-auth:
+  eclipse-labs-auth:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: egos-auth
+    container_name: eclipse-labs-auth
     working_dir: /app
     volumes:
       - ./:/app

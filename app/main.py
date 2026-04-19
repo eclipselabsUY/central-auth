@@ -1,17 +1,18 @@
-from fastapi import FastAPI 
+from fastapi import FastAPI
 from fastapi.responses import RedirectResponse
 
-from app.auth import auth_router
+from app.router import auth_router
 
 app = FastAPI()
 
-app.add_api_route(auth_router)
+app.include_router(auth_router, prefix="/auth")
 
 
 @app.get("/")
 def root():
-    return RedirectResponse("https://www.ego-services.com")
+    return RedirectResponse("https://www.eclipselabs.com.uy")
+
 
 @app.get("/health")
 def health_point():
-    return {"status" : "healthy"}
+    return {"status": "healthy"}
