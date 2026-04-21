@@ -1,6 +1,7 @@
 import secrets
 
 from app.core.config import ph
+from app.core.concurrency import run_cpu_bound
 from app.security.utils import _apply_pepper
 
 
@@ -38,3 +39,14 @@ def validate_password_strength(password: str) -> bool:
 def generate_temp_password(length=12):
     return secrets.token_urlsafe(length)
 
+
+async def async_hash_password(password: str) -> str:
+    return await run_cpu_bound(hash_password, password)
+
+
+async def async_verify_password(hash: str, password: str) -> bool:
+    return await run_cpu_bound(verify_password, hash, password)
+
+
+async def async_verify_and_update(hash: str, password: str) -> tuple[bool, str | None]:
+    return await run_cpu_bound(verify_and_update, hash, password)
