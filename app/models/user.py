@@ -44,4 +44,6 @@ class User(Base):
 
     locked_out: Mapped[bool] = mapped_column(Boolean, default=False, nullable=False)
 
-    locked_at : Mapped[DateTime] = mapped_column(DateTime(timezone=True), server_default=func.now(), nullable=True)
+    locked_at: Mapped[DateTime] = mapped_column(
+        DateTime(timezone=True), server_default=func.now(), nullable=True
+    )
