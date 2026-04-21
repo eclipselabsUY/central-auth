@@ -21,7 +21,7 @@ class User(Base):
 
     active: Mapped[bool] = mapped_column(Boolean, default=True, nullable=False)
 
-    verified: Mapped[bool] = mapped_column(Boolean, default=True, nullable=False)
+    verified: Mapped[bool] = mapped_column(Boolean, default=False, nullable=False)
 
     created_at: Mapped[DateTime] = mapped_column(
         DateTime(timezone=True), server_default=func.now(), nullable=False
@@ -41,3 +41,7 @@ class User(Base):
     failed_login_attempts: Mapped[int] = mapped_column(
         Integer, default=0, nullable=False
     )
+
+    locked_out: Mapped[bool] = mapped_column(Boolean, default=False, nullable=False)
+
+    locked_at : Mapped[DateTime] = mapped_column(DateTime(timezone=True), server_default=func.now(), nullable=True)
