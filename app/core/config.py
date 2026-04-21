@@ -1,5 +1,6 @@
 from dotenv import load_dotenv
 import os
+from argon2 import PasswordHasher
 
 # Load Env Vars
 PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../"))
@@ -15,6 +16,9 @@ POSTGRES_DB = os.getenv("POSTGRES_DB")
 
 # JWT
 JWT_KEY = os.getenv("JWT_KEY", "7tibry8v3t7biyc8n3fvb7gfhneo8ybg3r8yf3hqrksbywin")
+
+# PEPPER
+PEPPER = os.getenv("PEPPER")
 
 # SMTP
 SMTP_HOST = os.getenv("SMTP_HOST")
@@ -36,3 +40,7 @@ else:
         f"@{POSTGRES_HOST}:{POSTGRES_PORT}"
         f"/{POSTGRES_DB}"
     )
+
+ph = PasswordHasher(
+    time_cost=3, memory_cost=65536, parallelism=4, hash_len=64, salt_len=32
+)
