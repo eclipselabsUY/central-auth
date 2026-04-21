@@ -14,7 +14,7 @@ dependencies = [
     "psycopg2>=2.9.11",
     "pwdlib>=0.3.0",
     "pydantic[email]>=2.12.5",
-    "python-jose>=3.5.0",
+    "pyjwt>=2.12.1",
     "sqlalchemy>=2.0.46",
     "uvicorn>=0.40.0",
 ]
