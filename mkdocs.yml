@@ -1,0 +1,20 @@
+site_name: Eclipse Labs Auth Docs
+site_description: API and error reference for central-auth
+repo_name: EclipseLabs/central-auth
+
+theme:
+  name: mkdocs
+
+nav:
+  - Home: index.md
+  - API:
+      - Overview: api/overview.md
+      - Endpoints:
+          - Root: api/endpoints/root.md
+          - Health: api/endpoints/health.md
+          - Login: api/endpoints/login.md
+  - Errors:
+      - HTTP Errors: errors/http-errors.md
+      - Custom Error Codes: errors/custom-codes.md
+  - Exceptions:
+      - Overview: exceptions/overview.md
