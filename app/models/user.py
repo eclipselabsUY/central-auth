@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, DateTime, func, Boolean
+from sqlalchemy import Integer, String, DateTime, func, Boolean
 from sqlalchemy.orm import Mapped, mapped_column
 import uuid
 from sqlalchemy.dialects.postgresql import UUID as PG_UUID
