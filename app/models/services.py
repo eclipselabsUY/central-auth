@@ -17,3 +17,5 @@ class Service(Base):
     created_at : Mapped[DateTime] = mapped_column(DateTime, default=func.now(), nullable=False)
 
     apikey_id : Mapped[uuid.UUID] = mapped_column(ForeignKey("apikeys.id"), nullable=False, unique=True, index=True)
+
+    is_active : Mapped[bool] = mapped_column(Boolean, default=False, nullable=False)
